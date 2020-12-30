@@ -31,7 +31,7 @@ function Navbar() {
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
                     <img class="navbar-logo__image" src={logo} />
-                    <p className="navbar-logo__text">それでも月を夢見るか</p>
+                    <p className="navbar-logo__text">北の国から</p>
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
