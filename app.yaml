@@ -9,12 +9,12 @@ automatic_scaling:
 default_expiration: '30d'
 
 handlers:
-  - url: /static
-    static_dir: build/static
-  - url: /.*\.(json|ico|js|png|jpg|mp4|css)$
-    static_files: build/\1
-    upload: build/.*\.(json|ico|js|png|jpg|mp4|css)$
-  - url: .*
-    static_files: build/index.html
-    upload: build/index.html
-    expiration: '0s'
+# Serve all static files with url ending with a file extension
+- url: /(.*\..+)$
+  static_files: build/\1
+  upload: build/(.*\..+)$
+# Catch all handler to index.html
+- url: /.*
+  static_files: build/index.html
+  upload: build/index.html
+  expiration: '0s'
